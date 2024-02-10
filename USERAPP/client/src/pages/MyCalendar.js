@@ -1,10 +1,11 @@
 import { format, getDay, parse, startOfWeek } from "date-fns";
 import React, { useState } from "react";
 import { Calendar, dateFnsLocalizer } from "react-big-calendar";
-import "react-big-calendar/lib/css/react-big-calendar.css";
 import DatePicker from "react-datepicker";
-import "react-datepicker/dist/react-datepicker.css";
 import { useNavigate } from "react-router-dom";
+
+import "react-big-calendar/lib/css/react-big-calendar.css";
+import "react-datepicker/dist/react-datepicker.css";
 
 const locales = {
   "en-US": require("date-fns/locale/en-US"),
@@ -54,7 +55,7 @@ const MyCalendar = () => {
   ];
 
   const handleCardClick = (card) => {
-    navigate(`/registerpage/`, { state: {card:card } });
+    navigate(`/registerpage/`, { state: { card: card } });
   };
 
   return (
@@ -65,7 +66,7 @@ const MyCalendar = () => {
             <input
               type="text"
               placeholder="Add Title"
-              style={{ marginRight: "10px" }}
+              style={{ marginRight: "10px", padding: "5px", border: "none", borderBottom: "1px solid black" }}
               value={newEvent.title}
               onChange={(e) =>
                 setNewEvent({ ...newEvent, title: e.target.value })
@@ -76,28 +77,28 @@ const MyCalendar = () => {
             <div className="flex flex-col">
               <DatePicker
                 placeholderText="Start Date"
-                style={{ marginRight: "10px" }}
+                style={{ marginRight: "10px", padding: "5px", border: "none", borderBottom: "1px solid black" }}
                 selected={newEvent.start}
                 onChange={(start) => setNewEvent({ ...newEvent, start })}
-              ></DatePicker>
+              />
             </div>
             <div style={{ marginLeft: "2px" }} className="flex flex-col">
               <DatePicker
                 placeholderText="End Date"
                 selected={newEvent.end}
                 onChange={(end) => setNewEvent({ ...newEvent, end })}
-              ></DatePicker>
+              />
             </div>
           </div>
           <div style={{ marginTop: "12px" }} className="flex flex-col">
             <button
-              style={{ backgroundColor: "beige" }}
+              style={{ backgroundColor: "#F0E68C", padding: "10px", border: "none", cursor: "pointer" }}
               onClick={handleAddEvent}
             >
               Add Event
             </button>
           </div>
-          <h2 style={{ marginTop: "40px" }} className="flex justify-start">
+          <h2 style={{ marginTop: "40px", color: "#4682B4" }} className="flex justify-start">
             Today's Events
           </h2>
           <div
@@ -111,7 +112,7 @@ const MyCalendar = () => {
                 style={{ marginBottom: "20px", cursor: "pointer" }}
                 onClick={() => handleCardClick(card)}
               >
-                <p>{card.content}</p>
+                <p style={{ color: "#008080", fontWeight: "bold" }}>{card.content}</p>
               </div>
             ))}
           </div>
@@ -124,7 +125,7 @@ const MyCalendar = () => {
             endAccessor="end"
             style={{ height: "85vh", margin: "10px" }}
             onSelectEvent={handleDeleteEvent}
-          ></Calendar>
+          />
         </div>
       </div>
       {/* Mapping cardData and rendering each card */}
