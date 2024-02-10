@@ -123,6 +123,7 @@ const MyCalendar = () => {
             startAccessor="start"
             endAccessor="end"
             style={{ height: "85vh", margin: "10px" }}
+            onSelectEvent={handleDeleteEvent}
           ></Calendar>
         </div>
       </div>
