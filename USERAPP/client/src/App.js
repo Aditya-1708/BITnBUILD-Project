@@ -55,9 +55,11 @@ function App() {
               </div>
             }
           ></Route>
+          
           <Route exact path="/calendar" element={<MyCalendar />}></Route>
           <Route exact path="/home" element={<Homepage/>}></Route>
           <Route exact path="/profile" element={<Profilepage/>} ></Route>
+          <Route exact path="/staticpage" element={<StaticPage/>} ></Route>
         </Routes>
       </>
     </Router>
