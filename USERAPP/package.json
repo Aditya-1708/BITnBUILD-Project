@@ -1,0 +1,29 @@
+{
+  "name": "bitnbuild-project",
+  "version": "1.0.0",
+  "description": "��#\u0000 \u0000B\u0000I\u0000T\u0000n\u0000B\u0000U\u0000I\u0000L\u0000D\u0000-\u0000P\u0000r\u0000o\u0000j\u0000e\u0000c\u0000t\u0000\r\u0000 \u0000",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "body-parser": "^1.20.2",
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.1",
+    "express": "^4.18.2",
+    "jsonwebtoken": "^9.0.2",
+    "knex": "^3.1.0",
+    "mailgen": "^2.0.28",
+    "mongoose": "^8.1.1",
+    "multer": "^1.4.5-lts.1",
+    "nodemailer": "^6.9.9",
+    "path": "^0.12.7",
+    "pg": "^8.11.3",
+    "sqlite3": "^5.1.7"
+  }
+}
