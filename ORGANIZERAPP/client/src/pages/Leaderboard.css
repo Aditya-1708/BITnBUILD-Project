@@ -1,47 +1,30 @@
-/* src/Leaderboard.css */
-table {
-  width: 75%;
-  /* Adjust the width as needed */
-  margin: 20px auto;
-  /* Center the table on the page */
-  border-collapse: collapse;
+/* Leaderboard Container */
+.leaderboard-container {
+  margin: 20px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-th,
-td {
-  border: 1px solid #ddd;
+/* Leaderboard Table */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+th, td {
   padding: 10px;
   text-align: left;
+  border-bottom: 1px solid #ddd;
 }
 
 th {
   background-color: #f2f2f2;
 }
 
-/* Color coding for 1st, 2nd, and 3rd places */
-.rank-1 {
-  background-color: #fc752c;
-  /* 1st place color */
-}
-
-.rank-2 {
-  background-color: #684ed4;
-  /* 2nd place color */
-}
-
-.rank-3 {
-  background-color: #c1ec45;
-  /* 3rd place color */
-}
-
-/* Additional styling for a professional look */
-h2 {
-  color: #333;
-  text-align: center;
-  margin-top: 20px;
-  margin-bottom: 10px;
-}
-
-.leaderboard-container {
-  text-align: center;
-}
+/* Rank Color Classes */
+.rank-1 { background-color: #ffd700; }
+.rank-2 { background-color: #c0c0c0; }
+.rank-3 { background-color: #cd7f32; }

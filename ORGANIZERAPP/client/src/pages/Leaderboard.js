@@ -8,7 +8,7 @@ const Leaderboard = ({ leaderboardData }) => {
 
     return (
         <div className="leaderboard-container">
-            <h2>Leaderboard</h2>
+            <h2 style={{fontSize:"20px",fontWeight:"lighter"}}>Leaderboard</h2>
             <table>
                 <thead>
                     <tr>
