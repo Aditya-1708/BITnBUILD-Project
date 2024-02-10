@@ -1,15 +1,6 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
 import "../pages/styles.css";
 function Navbar() {
-<<<<<<< HEAD
-const history = useNavigate();
-const handleClick = () => {
-history("/profile");
-};
-
-=======
->>>>>>> 2b56d3eb5359725037d6f26d84f266097cd1af50
 return (
 <div class="">
     <header class="bg-slate-800">
@@ -47,10 +38,6 @@ return (
             id="user-menu-button"
             aria-expanded="false"
             aria-haspopup="true"
-<<<<<<< HEAD
-            onClick={handleClick}
-=======
->>>>>>> 2b56d3eb5359725037d6f26d84f266097cd1af50
             >
             <span class="absolute -inset-1.5"></span>
             <span class="sr-only">Open user menu</span>
