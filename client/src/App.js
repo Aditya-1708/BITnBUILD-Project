@@ -4,6 +4,7 @@ import './App.css'; // You can create a global styles file if needed
 import Leaderboard from './pages/Leaderboard';
 import Podium from './pages/Podium';
 
+import MyCalendar from "./pages/MyCalendar";
 function App() {
   const [leaderboardData, setLeaderboardData] = useState([]);
   const [podiumData, setPodiumData] = useState([]);
