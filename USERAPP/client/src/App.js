@@ -11,6 +11,7 @@ import RegisterPage from "./pages/RegisterPage";
 function App() {
   const [leaderboardData, setLeaderboardData] = useState([]);
   const [podiumData, setPodiumData] = useState([]);
+  const [isAuthenticated,setIsAuthenticated]=useState(false);
 
   useEffect(() => {
     // Mock data for demonstration purposes
@@ -25,6 +26,9 @@ function App() {
       { id: 8, name: "Helen Clark", points: 500 },
       { id: 9, name: "Ian Green", points: 50 },
       { id: 10, name: "Julia Adams", points: 45 },
+      {
+        id:11,name:"Abhishek",points:"90000"
+      }
     ];
 
     setLeaderboardData(mockData);
@@ -38,6 +42,10 @@ function App() {
     const updatedPodiumData = sortedLeaderboard.slice(0, 3);
     setPodiumData(updatedPodiumData);
   }, [leaderboardData]);
+
+  function handleSignInSuccess(){
+    setIsAuthenticated(true)
+  }
 
   return (
     <Router>

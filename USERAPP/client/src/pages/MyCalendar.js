@@ -128,7 +128,6 @@ const MyCalendar = () => {
           />
         </div>
       </div>
-      {/* Mapping cardData and rendering each card */}
     </>
   );
 };

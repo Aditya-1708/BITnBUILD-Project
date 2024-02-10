@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-function Signin() {
+function Signup() {
   const navigate = useNavigate();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
-  const handleLogin = async () => {
+  const handleSignup = async () => {
     try {
-      const response = await fetch('/users/login', {
+      const response = await fetch('/users/signup', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -17,33 +17,29 @@ function Signin() {
       });
 
       if (response.ok) {
-        // Login successful, navigate to homepage
         navigate('/homepage');
       } else {
-        // Login failed, handle error
         const data = await response.json();
-        console.error('Login failed:', data.message);
-        // You can display an error message to the user
+        console.error('Signup failed:', data.error);
       }
     } catch (error) {
-      console.error('Login error:', error);
-      // Handle any other errors that may occur during login
+      console.error('Signup error:', error);
     }
   };
 
   return (
     <section className="min-h-screen flex items-center justify-center">
-      <div className="bg-opacity-20 max-w-[950px] rounded-2xl shadow-2xl shadow-black py-5 px-0.25  gap-6">
+      <div className="bg-opacity-20 max-w-[950px] rounded-2xl shadow-2xl shadow-black py-5 px-0.25 gap-6">
         <div className="px-16">
-          <h2 className="pt-4 font-bold text-2xl">Login</h2>
+          <h2 className="pt-4 font-bold text-2xl">Sign Up</h2>
           <p className="text-sm mt-1">
-            If you are already a member, easily log in.
+            If you are not a member yet, sign up now.
           </p>
           <form
             className="flex flex-col gap-2"
             onSubmit={(e) => {
               e.preventDefault();
-              handleLogin();
+              handleSignup();
             }}
           >
             <input
@@ -79,14 +75,13 @@ function Signin() {
               className="rounded-2xl text-white bg-blue-500 hover:bg-blue-800 px-1 py-2 mt-2"
               type="submit"
             >
-              Login
+              Sign Up
             </button>
           </form>
-          {/* Other content */}
         </div>
       </div>
     </section>
   );
 }
 
-export default Signin;
+export default Signup;
