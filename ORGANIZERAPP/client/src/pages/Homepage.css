@@ -1,0 +1,32 @@
+
+.mySwiper {
+    width: auto;
+    height: 60vh; 
+  }
+  
+  .swiper-slide {
+    color: white;
+    background-color: black; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+  }
+
+  .image-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Two columns per row */
+    grid-gap: 20px;
+  }
+  
+  .image-grid img {
+    width: 100%;
+    height: auto;
+  }
+
+  #SuggestedContent{
+    text-align: start;
+    padding-bottom: 10px;
+  }
+  

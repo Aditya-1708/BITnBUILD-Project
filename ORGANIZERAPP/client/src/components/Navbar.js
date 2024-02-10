@@ -3,7 +3,6 @@ import { useNavigate } from "react-router-dom";
 import IconProfile from "../img/profile_icon.svg";
 import "../pages/styles.css";
 
-
 function Navbar() {
     const history = useNavigate();
 
@@ -28,16 +27,12 @@ function Navbar() {
                             </a>
                         </li>
                         <li>
-                            <a href="/calendar" className="hover:text-gray-200">
-                                Calendar
-                            </a>
-                        </li>
-                        <li>
                             <button
                                 type="button"
                                 className="relative flex items-center focus:outline-none"
                                 onClick={handleClick}
                             >
+                                <span className="sr-only">View Profile</span>
                                 <img
                                 style={{paddingBottom:"3.5px"}}
                                     className="h-8 w-8 rounded-full"
