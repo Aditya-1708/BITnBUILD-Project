@@ -6,6 +6,7 @@ import Leaderboard from "./pages/Leaderboard";
 import MyCalendar from "./pages/MyCalendar";
 import Podium from "./pages/Podium";
 import Profilepage from "./pages/Profilepage";
+import StaticPage from "./pages/StaticPage";
 
 function App() {
   const [leaderboardData, setLeaderboardData] = useState([]);
@@ -60,6 +61,8 @@ function App() {
         </Routes>
       </>
     </Router>
+  
+
   );
 }
 
