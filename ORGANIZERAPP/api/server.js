@@ -47,7 +47,6 @@ async function generateOTP() {
 }
 async function compareOTP(OTPReceived, OTPDatabase) {
     try {
-        console.log(toString(OTPReceived) + "  " + toString(OTPDatabase))
         return OTPReceived === OTPDatabase;
     }
     catch (error) {
@@ -113,7 +112,7 @@ app.post('/users/verify', async (req, res) => {
 
     const results = await userController.getDetailsForVerification(email);
 
-    if (OTP === results[0].otp) {
+    if (compareOTP(OTP,Number(results[0].otp))) {
         res.status(200).json({ message: "Email successfully verified" });
     }
     else {
