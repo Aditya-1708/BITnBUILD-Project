@@ -1,32 +1,32 @@
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 function Signin() {
   const navigate = useNavigate();
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
   const handleLogin = async () => {
     try {
-      const response = await fetch('/users/login', {
-        method: 'POST',
+      const response = await fetch("/users/login", {
+        method: "POST",
         headers: {
-          'Content-Type': 'application/json',
+          "Content-Type": "application/json",
         },
         body: JSON.stringify({ email, password }),
       });
 
       if (response.ok) {
         // Login successful, navigate to homepage
-        navigate('/homepage');
+        navigate("/homepage");
       } else {
         // Login failed, handle error
         const data = await response.json();
-        console.error('Login failed:', data.message);
+        console.error("Login failed:", data.message);
         // You can display an error message to the user
       }
     } catch (error) {
-      console.error('Login error:', error);
+      console.error("Login error:", error);
       // Handle any other errors that may occur during login
     }
   };
