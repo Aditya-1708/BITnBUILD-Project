@@ -7,7 +7,6 @@ import MyCalendar from "./pages/MyCalendar";
 import Podium from "./pages/Podium";
 import Profilepage from "./pages/Profilepage";
 
-import Navbar from "./components/Navbar"
 function App() {
   const [leaderboardData, setLeaderboardData] = useState([]);
   const [podiumData, setPodiumData] = useState([]);
