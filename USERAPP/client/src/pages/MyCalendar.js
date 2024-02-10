@@ -31,29 +31,27 @@ setAllEvents(updatedEvents);
 };
 
 return (
-<div class="bg-[##DCF2F1]">
-    <div class="flex justify-between items-end">
-    <h1 class="text-4xl font-bold mx-3 mt-2 font-serif underline">
-        Calendar
-    </h1>
+<div class="bg-[#7FC7D9]">
+    <div class="flex justify-end items-end">
+    
 
-    <h2 class="text-2xl font-semibold border border-gray-700 border-xl rounded-xl -translate-x-10 ">
-        Add a new Event
+    <h2 class="text-2xl font-semibold underline font-serif border bg-slate-800 text-white border-gray-700 border-xl px-1 py-1 -translate-x-10 ">
+        Add new Event
     </h2>
     </div>
 
     <div
-    style={{
+    style={{padding:"20px",
         textAlign: "right",
-        width: "70%",
+        width: "60%",
         height: "auto",
         marginLeft: "auto",
         marginRight: "0",
     }}
     >
-    <div class="-translate-x-40 ">
+    <div class="-translate-x-40 space-x-4 py-4 ">
         <input
-        class="text-xl placeholder-black"
+        class=" placeholder-black"
         type="text"
         placeholder="Add Title"
         style={{ width: "20%", marginRight: "10px" }}
@@ -64,7 +62,7 @@ return (
         />
 
         <DatePicker
-        class="text-xl"
+        
         placeholderText="Start Date"
         style={{ marginRight: "10px" }}
         selected={newEvent.start}
@@ -72,17 +70,18 @@ return (
         />
 
         <DatePicker
-        class="text-xl"
+        class=""
         placeholderText="End Date"
         selected={newEvent.end}
         onChange={(end) => setNewEvent({ ...newEvent, end })}
         />
 
-        <button style={{ marginTop: "10px" }} onClick={handleAddEvent}>
+        <button style={{ marginTop: "10px" }} onClick={handleAddEvent} class="border bg-blue-600 text-white border-black px-2 py-1 border-2xl rounded hover:bg-blue-800">
         Add Event
         </button>
     </div>
 
+    <div class="bg-[#DCF2F1] font-bold" style={{padding:"2px",}}  >
     <Calendar
         localizer={localizer}
         events={allEvents}
@@ -91,6 +90,10 @@ return (
         style={{ height: 500, margin: "50px" }}
         onSelectEvent={handleDeleteEvent}
     />
+    </div>
+    </div>
+    <div>
+        
     </div>
 </div>
 );
