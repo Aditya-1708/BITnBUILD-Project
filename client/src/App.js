@@ -4,14 +4,16 @@ import Signin from "./pages/Signin";
 import Email from "./pages/Email";
 import Otp from "./pages/Otp";
 import Navbar from "./components/Navbar";
+import Navbarlanding from "./components/Navbarlanding";
 function App() {
   return (
     <>
-      <Navbar></Navbar>
+      {/* <Navbar></Navbar> */}
       {/* <Signin></Signin> */}
       {/* <Email></Email> */}
       {/* <Otp></Otp> */}
       {/* <MyCalendar></MyCalendar> */}
+      <Navbarlanding></Navbarlanding>
     </>
     
   );
