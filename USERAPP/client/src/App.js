@@ -49,7 +49,7 @@ function App() {
             path="/leaderboard"
             element={
               <div className="app-container">
-                <h1 className="global-leader">Global Leader</h1>
+                <h1 style={{textAlign:"center",fontWeight:"bold",fontSize:"30px"}} className="global-leader">Global Leaderboard</h1>
                 <Podium podiumData={podiumData} />
                 <Leaderboard leaderboardData={leaderboardData} />
               </div>
