@@ -6,7 +6,7 @@ import Leaderboard from "./pages/Leaderboard";
 import MyCalendar from "./pages/MyCalendar";
 import Podium from "./pages/Podium";
 import Profilepage from "./pages/Profilepage";
-import StaticPage from "./pages/StaticPage";
+import RegisterPage from "./pages/RegisterPage";
 
 function App() {
   const [leaderboardData, setLeaderboardData] = useState([]);
@@ -59,7 +59,7 @@ function App() {
           <Route exact path="/calendar" element={<MyCalendar />}></Route>
           <Route exact path="/home" element={<Homepage/>}></Route>
           <Route exact path="/profile" element={<Profilepage/>} ></Route>
-          <Route exact path="/staticpage" element={<StaticPage/>} ></Route>
+          <Route exact path="/registerpage" element={<RegisterPage/>} ></Route>
         </Routes>
       </>
     </Router>
