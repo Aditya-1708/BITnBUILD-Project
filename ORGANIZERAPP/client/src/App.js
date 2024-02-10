@@ -3,11 +3,8 @@ import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Homepage from "./pages/Homepage";
 import Leaderboard from "./pages/Leaderboard";
-import MyCalendar from "./pages/MyCalendar";
 import Podium from "./pages/Podium";
 import Profilepage from "./pages/Profilepage";
-import StaticPage from "./pages/StaticPage";
-
 function App() {
   const [leaderboardData, setLeaderboardData] = useState([]);
   const [podiumData, setPodiumData] = useState([]);
@@ -56,10 +53,8 @@ function App() {
             }
           ></Route>
           
-          <Route exact path="/calendar" element={<MyCalendar />}></Route>
           <Route exact path="/home" element={<Homepage/>}></Route>
           <Route exact path="/profile" element={<Profilepage/>} ></Route>
-          <Route exact path="/staticpage" element={<StaticPage/>} ></Route>
         </Routes>
       </>
     </Router>
