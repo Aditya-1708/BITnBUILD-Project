@@ -5,15 +5,20 @@ import Email from "./pages/Email";
 import Otp from "./pages/Otp";
 import Navbar from "./components/Navbar";
 import Navbarlanding from "./components/Navbarlanding";
+import Home from "./pages/Home";
+
 function App() {
   return (
     <>
-      {/* <Navbar></Navbar> */}
+    
+      <Navbar></Navbar>
       {/* <Signin></Signin> */}
       {/* <Email></Email> */}
       {/* <Otp></Otp> */}
       {/* <MyCalendar></MyCalendar> */}
-      <Navbarlanding></Navbarlanding>
+      {/* <Navbarlanding></Navbarlanding> */}
+      {/* <Home></Home> */}
+      
     </>
     
   );
