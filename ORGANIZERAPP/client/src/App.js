@@ -7,6 +7,7 @@ import MyCalendar from "./pages/MyCalendar";
 import Podium from "./pages/Podium";
 import Profilepage from "./pages/Profilepage";
 import StaticPage from "./pages/StaticPage";
+import Blog from "./components/Blog";
 
 function App() {
   const [leaderboardData, setLeaderboardData] = useState([]);
@@ -40,30 +41,32 @@ function App() {
   }, [leaderboardData]);
 
   return (
-    <Router>
-      <>
-      <Navbar />
-        <Routes>
-          <Route
-            exact
-            path="/leaderboard"
-            element={
-              <div className="app-container">
-                <h1 className="global-leader">Global Leader</h1>
-                <Podium podiumData={podiumData} />
-                <Leaderboard leaderboardData={leaderboardData} />
-              </div>
-            }
-          ></Route>
+    // <Router>
+    //   <>
+    //   <Navbar />
+    //     <Routes>
+    //       <Route
+    //         exact
+    //         path="/leaderboard"
+    //         element={
+    //           <div className="app-container">
+    //             <h1 className="global-leader">Global Leader</h1>
+    //             <Podium podiumData={podiumData} />
+    //             <Leaderboard leaderboardData={leaderboardData} />
+    //           </div>
+    //         }
+    //       ></Route>
           
-          <Route exact path="/calendar" element={<MyCalendar />}></Route>
-          <Route exact path="/home" element={<Homepage/>}></Route>
-          <Route exact path="/profile" element={<Profilepage/>} ></Route>
-          <Route exact path="/staticpage" element={<StaticPage/>} ></Route>
-        </Routes>
-      </>
-    </Router>
-  
+    //       <Route exact path="/calendar" element={<MyCalendar />}></Route>
+    //       <Route exact path="/home" element={<Homepage/>}></Route>
+    //       <Route exact path="/profile" element={<Profilepage/>} ></Route>
+    //       <Route exact path="/staticpage" element={<StaticPage/>} ></Route>
+    //     </Routes>
+    //   </>
+    // </Router>
+  <>
+  <Blog></Blog>
+  </>
 
   );
 }
