@@ -12,6 +12,8 @@ app.use(cookieParser());
 app.use(bodyParser.json());
 const saltrounds = 10;
 const userController = require("./users/controller");
+const organizercontroller=require("./organizers/controller");
+const { default: askAI } = require("./AIservice/askAI");
 const secretKey = "your_secret_key"; // Define your secret key for JWT
 const authenticateJWT = (req, res, next) => {//middle ware to authenticate the user or admin
     const authHeader = req.cookies.token;
@@ -112,10 +114,9 @@ app.post('/users/verify', async (req, res) => {
 
     const results = await userController.getDetailsForVerification(email);
 
-    if (compareOTP(OTP,Number(results[0].otp))) {
+    if (compareOTP(OTP, parseInt(results[0].otp))) {
         res.status(200).json({ message: "Email successfully verified" });
-    }
-    else {
+    } else {
         userController.deleteEmailIfOTPUnsuccessful(email);
         res.status(400).json({ message: "Email verification failed" });
     }
@@ -131,7 +132,25 @@ app.post('/users/signup', async (req, res) => {
         res.status(500).json({ success: false, error: 'An error occurred during signup' });
     }
 });
-
+app.post('/users/suggestedEvents', async (req, res) => {
+    const {emailU,emailO}=req.body;
+    try{
+        askAI(content)
+    }catch (error) {
+        res.status(500).json({ success: false, error: 'An error occurred during signup' });
+    }
+});
+const content = [
+    ["Java", "ruby"],
+    [
+        ["JavaScript", "Python"],
+        ["Java", "HTML", "CSS"],
+        ["C++", "SQL", "Ruby"],
+        ["PHP", "Swift", "TypeScript"],
+        ["Go", "Rust", "Kotlin"],
+        ["Scala", "Perl"]
+    ]
+];
 app.listen(4000, () => {
     console.log('Server is listening on port 4000');
 });

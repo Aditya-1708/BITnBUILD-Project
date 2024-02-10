@@ -7,7 +7,14 @@ const users = new Pool({
     password: "Aditya17!",
     port: 5432,
 });
-
+const organizer = new Pool({
+    user: "postgres",
+    host: "localhost",
+    database: "organizer",
+    password: "Aditya17!",
+    port: 5432,
+});
 module.exports = {
     users,
+    organizer
 };
