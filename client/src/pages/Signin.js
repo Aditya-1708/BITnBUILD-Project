@@ -7,9 +7,9 @@ return (
 
         <div class="px-16">
         <h2 class="pt-4 font-bold text-2xl"> Login</h2>
-        <p class="text-sm  mt-1">
-            If you are already a member , easily log in.
-        </p>
+            <p class="text-sm  mt-1">
+                If you are already a member , easily log in.
+            </p>
         <form action class="flex flex-col gap-2">
             <input
             class=" placeholder-gray-500 font-semibold py-1 px-2 mt-10 rounded-xl border border-blue-300"

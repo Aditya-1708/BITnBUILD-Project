@@ -3,11 +3,11 @@ import MyCalendar from "./pages/MyCalendar";
 function App() {
   return (
     <>
+      <Navbar></Navbar>
       {/* <Signin></Signin> */}
       {/* <Email></Email> */}
       {/* <Otp></Otp> */}
-      {/* <Navbar></Navbar> */}
-      <MyCalendar></MyCalendar>
+      {/* <MyCalendar></MyCalendar> */}
     </>
     
   );
