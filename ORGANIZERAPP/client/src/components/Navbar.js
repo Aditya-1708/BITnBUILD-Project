@@ -20,14 +20,6 @@ return (
                 Leaderboard
             </a>
             </li>
-            <li>
-            <a class="hover:text-gray-400 text-white" href="/calendar">
-                Calendar
-            </a>
-            </li>
-            <li>
-            <a class="hover:text-gray-400 text-white" href="/profile"></a>
-            </li>
         </ul>
         </div>
         <div>
