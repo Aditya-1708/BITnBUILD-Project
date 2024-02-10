@@ -21,7 +21,7 @@ const localizer = dateFnsLocalizer({
 const MyCalendar = () => {
   const [newEvent, setNewEvent] = useState({ title: "", start: "", end: "" });
   const [allEvents, setAllEvents] = useState([]);
-  const history = useNavigate();
+  const navigate = useNavigate();
 
   const handleAddEvent = () => {
     setAllEvents([...allEvents, newEvent]);
@@ -53,8 +53,8 @@ const MyCalendar = () => {
     },
   ];
 
-  const handleCardClick = () => {
-    history("/staticpage"); // Replace "/new-page" with the desired path
+  const handleCardClick = (card) => {
+    navigate(`/registerpage/`, { state: {card:card } });
   };
 
   return (
@@ -109,7 +109,7 @@ const MyCalendar = () => {
                 className="flex justify-start"
                 key={card.id}
                 style={{ marginBottom: "20px", cursor: "pointer" }}
-                onClick={handleCardClick}
+                onClick={() => handleCardClick(card)}
               >
                 <p>{card.content}</p>
               </div>
