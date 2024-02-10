@@ -1,6 +1,5 @@
 import React from "react";
 import "../pages/styles.css";
-import Profilepage from "../pages/Profilepage";
 function Navbar() {
 return (
 <div class="">
