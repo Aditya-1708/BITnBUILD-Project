@@ -1,4 +1,4 @@
-const db=require('../../db');
+const db=require('../db/db.js')
 const queries=require('./queries')
 const checkEmailExists = async (email) => {
     try {
