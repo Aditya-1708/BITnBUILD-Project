@@ -7,10 +7,10 @@ import Navbar from "./components/Navbar";
 function App() {
   return (
     <>
+      <Navbar></Navbar>
       {/* <Signin></Signin> */}
       {/* <Email></Email> */}
-      <Otp></Otp>
-      {/* <Navbar></Navbar> */}
+      {/* <Otp></Otp> */}
       {/* <MyCalendar></MyCalendar> */}
     </>
     
