@@ -1,4 +1,3 @@
-// src/Leaderboard.js
 import React from 'react';
 import './Leaderboard.css';
 
@@ -7,8 +6,8 @@ const Leaderboard = ({ leaderboardData }) => {
     const sortedLeaderboard = leaderboardData.slice().sort((a, b) => b.points - a.points);
 
     return (
-        <div className="leaderboard-container">
-            <h2 style={{fontSize:"20px",fontWeight:"lighter"}}>Leaderboard</h2>
+        <div className="leaderboard-container" style={{ backgroundColor: '#f0f0f0' }}>
+            <h2 style={{ fontSize: '20px', fontWeight: 'lighter' }}>Leaderboard</h2>
             <table>
                 <thead>
                     <tr>

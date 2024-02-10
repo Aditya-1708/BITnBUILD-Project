@@ -4,56 +4,46 @@ import "../pages/styles.css";
 
 function Navbar() {
     const history = useNavigate();
-  const handleClick = () => {
-    history("/profile");
-  };
 
-return (
-<div class="">
-    <header class="bg-slate-800">
-    <nav class="flex justify-between  mx-auto">
-        <div>
-        <p class="text-white mx-5 mt-3">BitNBuilt</p>
+    const handleClick = () => {
+        history("/profile");
+    };
+
+    return (
+        <div className="bg-gradient-to-r from-blue-500 to-indigo-700">
+            <header className="container mx-auto flex items-center justify-between py-4">
+                <h1 className="text-white text-2xl font-bold">BitNBuilt</h1>
+                <nav>
+                    <ul className="flex gap-8 text-white">
+                        <li>
+                            <a href="/home" className="hover:text-gray-200">
+                                Home
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/leaderboard" className="hover:text-gray-200">
+                                Leaderboard
+                            </a>
+                        </li>
+                        <li>
+                            <button
+                                type="button"
+                                className="relative flex items-center focus:outline-none"
+                                onClick={handleClick}
+                            >
+                                <span className="sr-only">View Profile</span>
+                                <img
+                                    className="h-8 w-8 rounded-full"
+                                    src="#" // Add the path to the user's profile image
+                                    alt="User Profile"
+                                />
+                            </button>
+                        </li>
+                    </ul>
+                </nav>
+            </header>
         </div>
-        <div class="-translate-x-14">
-        <ul class="flex  gap-14 py-3">
-            <li>
-            <a class="hover:text-gray-400 text-white" href="/home">
-                Home
-            </a>
-            </li>
-            <li>
-            <a class="hover:text-gray-400 text-white" href="/leaderboard">
-                Leaderboard
-            </a>
-            </li>
-    
-            <li>
-            <a class="hover:text-gray-400 text-white" href="/profile"></a>
-            </li>
-        </ul>
-        </div>
-        <div>
-        <div class="relative ml-3 -translate-x-5 translate-y-2">
-            <button
-            type="button"
-            class="relative flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
-            id="user-menu-button"
-            aria-expanded="false"
-            aria-haspopup="true"
-            onClick={handleClick}
-            >
-            <span class="absolute -inset-1.5"></span>
-            <span class="sr-only">Open organiser menu</span>
-            <img class="h-8 w-8 rounded-full" src="#" alt="" />
-            
-            </button>
-        </div>
-        </div>
-    </nav>
-    </header>
-</div>
-);
+    );
 }
 
 export default Navbar;
