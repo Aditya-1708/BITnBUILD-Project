@@ -4,11 +4,10 @@ const users = new Pool({
     user: "postgres",
     host: "localhost",
     database: "users",
-    password: "Aditya170804!",
+    password: "Aditya17!",
     port: 5432,
 });
 
 module.exports = {
     users,
-    admins,
 };

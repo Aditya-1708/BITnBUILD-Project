@@ -1,5 +1,6 @@
 import React from "react";
 import MyCalendar from "./pages/MyCalendar";
+import Navbar from "./components/Navbar"
 function App() {
   return (
     <>
