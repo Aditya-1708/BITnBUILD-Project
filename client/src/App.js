@@ -1,4 +1,6 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import Leaderboard from "./pages/Leaderboard";
+import Podium from "./pages/Podium";
 function App() {
   const [leaderboardData, setLeaderboardData] = useState([]);
   const [podiumData, setPodiumData] = useState([]);
