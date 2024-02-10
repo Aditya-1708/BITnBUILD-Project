@@ -1,5 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import IconProfile from "../img/profile_icon.svg";
 import "../pages/styles.css";
 
 function Navbar() {
@@ -33,8 +34,9 @@ function Navbar() {
                             >
                                 <span className="sr-only">View Profile</span>
                                 <img
+                                style={{paddingBottom:"3.5px"}}
                                     className="h-8 w-8 rounded-full"
-                                    src="#" // Add the path to the user's profile image
+                                    src={IconProfile}
                                     alt="User Profile"
                                 />
                             </button>
