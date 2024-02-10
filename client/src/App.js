@@ -1,8 +1,8 @@
 // src/App.js
 import React, { useState, useEffect } from 'react';
 import './App.css'; // You can create a global styles file if needed
-import Leaderboard from './Leaderboard';
-import Podium from './Podium';
+import Leaderboard from './pages/Leaderboard';
+import Podium from './pages/Podium';
 
 function App() {
   const [leaderboardData, setLeaderboardData] = useState([]);
@@ -15,7 +15,7 @@ function App() {
       { id: 2, name: 'Jane Smith', points: 90 },
       { id: 3, name: 'Bob Johnson', points: 80 },
       { id: 4, name: 'Alice Brown', points: 75 },
-      { id: 5, name: 'Charlie Davis', points: 700 },
+      { id: 5, name: 'Charlie Davis', points: 7000 },
       { id: 6, name: 'Eva White', points: 650 },
       { id: 7, name: 'George Miller', points: 60 },
       { id: 8, name: 'Helen Clark', points: 500 },
