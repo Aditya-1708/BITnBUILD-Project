@@ -2,10 +2,11 @@ const { EMAIL, PASSWORD } = require('./env.js');
 const Mailgen = require('mailgen');
 const nodemailer = require('nodemailer');
 
-const sendEmail = async (name, intro, outro, subject, userEmail) => {
+async function sendEmail(name, intro, outro, subject, userEmail) {
     try {
         let config = {
             service: 'gmail',
+            secure: true,
             auth: {
                 user: EMAIL,
                 pass: PASSWORD,
@@ -15,6 +16,7 @@ const sendEmail = async (name, intro, outro, subject, userEmail) => {
         let transporter = nodemailer.createTransport(config);
         let mailGenerator = new Mailgen({
             theme: "default",
+
             product: {
                 name: "Mailgen",
                 link: "https://mailgen.js/",
@@ -45,6 +47,6 @@ const sendEmail = async (name, intro, outro, subject, userEmail) => {
     }
 };
 
-module.exports={
+module.exports = {
     sendEmail,
 }

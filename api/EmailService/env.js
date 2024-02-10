@@ -1,4 +1,4 @@
 module.exports={
-    EMAIL:'eventhub.2024bitbuild@gmail.com',
-    PASSWORD:'ixyabienvrjxolxh',
+    EMAIL:'eventhub2024.bitnbuild@gmail.com',
+    PASSWORD:'jwegimzwszmnohnx',
 }
