@@ -1,50 +1,31 @@
-/* src/Podium.css */
+/* Podium Container */
 .podium-container {
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
-    align-items:flex-end;
-  }
-  
-  .podium-rank {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 15px;
-    border-radius: 10px;
-    border: 1px solid #ccc;
-    margin-top: 15px;
-    height: 200px; /* Initial height, adjust as needed */
-    width: 25%; /* Adjust the width as needed */
-  }
-  
-  .podium-rank.rank-1 {
-    padding: 120px 15px 15px;
-    text-align: center;
-  }
-  
-  .podium-rank.rank-2 {
-    padding: 80px 15px 15px;
-    text-align: center;
-  }
-  
-  /* Color coding for 1st, 2nd, and 3rd places */
-  .rank-1 {
-    background-color: #fc752c; /* 1st place color */
-  }
-  
-  .rank-2 {
-    background-color: #684ed4; /* 2nd place color */
-  }
-  
-  .rank-3 {
-    background-color: #c1ec45; /* 3rd place color */
-  }
-  
-  .medal {
-    position: absolute;
-    top: 5px;
-    right: 5px;
-    font-size: 16px;
-  }
-  
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  margin: 20px auto;
+}
+
+/* Podium Rank */
+.podium-rank {
+  width: 30%;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Podium Medal */
+.medal {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+/* Podium Details */
+.podium-details {
+  text-align: center;
+}
+
+/* Rank Colors */
+.rank-1 { background-color: #ffd700; }
+.rank-2 { background-color: #c0c0c0; }
+.rank-3 { background-color: #cd7f32; }
