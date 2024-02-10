@@ -4,6 +4,7 @@ import { Calendar, dateFnsLocalizer } from "react-big-calendar";
 import "react-big-calendar/lib/css/react-big-calendar.css";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+import { useNavigate } from "react-router-dom";
 
 const locales = {
   "en-US": require("date-fns/locale/en-US"),
@@ -20,6 +21,7 @@ const localizer = dateFnsLocalizer({
 const MyCalendar = () => {
   const [newEvent, setNewEvent] = useState({ title: "", start: "", end: "" });
   const [allEvents, setAllEvents] = useState([]);
+  const history = useNavigate();
 
   const handleAddEvent = () => {
     setAllEvents([...allEvents, newEvent]);
@@ -51,6 +53,10 @@ const MyCalendar = () => {
     },
   ];
 
+  const handleCardClick = () => {
+    history("/staticpage"); // Replace "/new-page" with the desired path
+  };
+
   return (
     <>
       <div className="flex flex-row">
@@ -59,7 +65,7 @@ const MyCalendar = () => {
             <input
               type="text"
               placeholder="Add Title"
-              style={{ width: "20%", marginRight: "10px" }}
+              style={{ marginRight: "10px" }}
               value={newEvent.title}
               onChange={(e) =>
                 setNewEvent({ ...newEvent, title: e.target.value })
@@ -91,17 +97,22 @@ const MyCalendar = () => {
               Add Event
             </button>
           </div>
-          <h2 style={{marginTop:"40px"}} className="flex justify-start">Today's Events</h2>
+          <h2 style={{ marginTop: "40px" }} className="flex justify-start">
+            Today's Events
+          </h2>
           <div
             className="flex flex-col"
             style={{ marginTop: "20px", marginLeft: "20px" }}
           >
             {cardData.map((card) => (
-              <a href="/">
-                <div className="flex justify-start" key={card.id} style={{ marginBottom: "20px" }}>
-                  <p>{card.content}</p>
-                </div>
-              </a>
+              <div
+                className="flex justify-start"
+                key={card.id}
+                style={{ marginBottom: "20px", cursor: "pointer" }}
+                onClick={handleCardClick}
+              >
+                <p>{card.content}</p>
+              </div>
             ))}
           </div>
         </div>
