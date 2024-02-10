@@ -43,6 +43,7 @@ const deleteEmailIfOTPUnsuccessful = async (email) => {
 const addEmailIfSuccessful = async (email, password) => {
     try {
         const results = await db.users.query(queries.addEmailIfSuccessfulQuery, [email, password]);
+        await deleteEmailIfOTPUnsuccessful(email);
         return results.rows;
     } catch (error) {
         console.error('Error executing query', error);
