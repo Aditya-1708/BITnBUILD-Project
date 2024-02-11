@@ -7,12 +7,17 @@ import MyCalendar from "./pages/MyCalendar";
 import Podium from "./pages/Podium";
 import Profilepage from "./pages/Profilepage";
 import RegisterPage from "./pages/RegisterPage";
-
+import Signin from "./pages/Signin";
 function App() {
   const [leaderboardData, setLeaderboardData] = useState([]);
   const [podiumData, setPodiumData] = useState([]);
-  const [isAuthenticated,setIsAuthenticated]=useState(false);
-
+  const [isAuthenticated, setIsAuthenticated] = useState(
+    sessionStorage.getItem("isAuthenticated") === "true" ? true : false
+  );
+  function handleSignInSuccess() {
+    setIsAuthenticated(true);
+    sessionStorage.setItem("isAuthenticated", "true");
+  }
   useEffect(() => {
     // Mock data for demonstration purposes
     const mockData = [
@@ -27,8 +32,10 @@ function App() {
       { id: 9, name: "Ian Green", points: 50 },
       { id: 10, name: "Julia Adams", points: 45 },
       {
-        id:11,name:"Abhishek",points:"90000"
-      }
+        id: 11,
+        name: "Abhishek",
+        points: "90000",
+      },
     ];
 
     setLeaderboardData(mockData);
@@ -43,36 +50,48 @@ function App() {
     setPodiumData(updatedPodiumData);
   }, [leaderboardData]);
 
-  function handleSignInSuccess(){
-    setIsAuthenticated(true)
+  function handleSignInSuccess() {
+    setIsAuthenticated(true);
   }
 
   return (
     <Router>
       <>
-      <Navbar />
+        <Navbar />
         <Routes>
+          <Route
+            exact
+            path="/Signin"
+            element={<Signin onSignInSuccess={handleSignInSuccess}></Signin>}
+          ></Route>
           <Route
             exact
             path="/leaderboard"
             element={
               <div className="app-container">
-                <h1 style={{textAlign:"center",fontWeight:"bold",fontSize:"30px"}} className="global-leader">Global Leaderboard</h1>
+                <h1
+                  style={{
+                    textAlign: "center",
+                    fontWeight: "bold",
+                    fontSize: "30px",
+                  }}
+                  className="global-leader"
+                >
+                  Global Leaderboard
+                </h1>
                 <Podium podiumData={podiumData} />
                 <Leaderboard leaderboardData={leaderboardData} />
               </div>
             }
           ></Route>
-          
+
           <Route exact path="/calendar" element={<MyCalendar />}></Route>
-          <Route exact path="/home" element={<Homepage/>}></Route>
-          <Route exact path="/profile" element={<Profilepage/>} ></Route>
-          <Route exact path="/registerpage" element={<RegisterPage/>} ></Route>
+          <Route exact path="/home" element={<Homepage />}></Route>
+          <Route exact path="/profile" element={<Profilepage />}></Route>
+          <Route exact path="/registerpage" element={<RegisterPage />}></Route>
         </Routes>
       </>
     </Router>
-  
-
   );
 }
 

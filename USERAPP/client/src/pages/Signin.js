@@ -1,35 +1,38 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Navigate, useNavigate } from "react-router-dom";
 
-function Signin() {
+
+function Signin(props) {
   const navigate = useNavigate();
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [email,setEmail]=useState('');
 
-  const handleLogin = async () => {
-    try {
-      const response = await fetch("/users/login", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ email, password }),
-      });
-
-      if (response.ok) {
-        // Login successful, navigate to homepage
-        navigate("/homepage");
-      } else {
-        // Login failed, handle error
-        const data = await response.json();
-        console.error("Login failed:", data.message);
-        // You can display an error message to the user
-      }
-    } catch (error) {
-      console.error("Login error:", error);
-      // Handle any other errors that may occur during login
+  const[password,setPassword]=useState('');
+  const[redirect,setRedirect]=useState(false);
+  async function handleSignin(ev){
+    try{
+      ev.preventDefault();
+      const response=await fetch('http://localhost:4000/users/login',{
+      method: 'POST',
+      body: JSON.stringify({"username":email,"password":password}),
+      headers:{'Content-Type':'application/json'},
+      credentials:'include',
+    });
+    if(response.ok){
+      setRedirect(true);
+      props.onSignInSuccess();
+          }
+    else{
+      const responseBody=await response.json();
+      alert(responseBody.message);
     }
-  };
+    }catch(error){
+      console.log(error);
+      alert("Sign-in failed");
+    }
+  }
+  if(redirect){
+    return <Navigate to={'/Home'}></Navigate>
+  }
 
   return (
     <section className="min-h-screen flex items-center justify-center">
@@ -43,7 +46,7 @@ function Signin() {
             className="flex flex-col gap-2"
             onSubmit={(e) => {
               e.preventDefault();
-              handleLogin();
+              handleSignin();
             }}
           >
             <input
