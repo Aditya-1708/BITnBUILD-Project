@@ -20,6 +20,7 @@ const updateUserSkills="UPDATE userdetails SET skills = array_append(skills, $1)
 const getSkillsByEmail ="SELECT skills FROM userdetails WHERE email = $1";
 const getBadgesByEmail="SELECT badges FROM badges WHERE email = $1";
 const getEventsAttended="SELECT badges FROM events_attended WHERE email = $1";
+const getLBStats="SELECT (email,pointsnum) from userdetails WHERE email = $1;";
 module.exports = {
     checkEmailExistsQuery,
     addEmailForVerificationQuery,
